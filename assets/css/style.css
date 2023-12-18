@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 32px;
+  margin: auto;
+}
+
+nav {
+  width: 100%;
+  padding: 20px 0;
+  background-color: white;
+}
+nav .container1 {
+  max-width: 1300px;
+  width: 100%;
+  padding: 0 32px;
+  margin: auto;
+}
+nav .container1 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .container1 .navbar img {
+  cursor: pointer;
+}
+nav .container1 .navbar ul {
+  display: flex;
+  gap: 35px;
+}
+nav .container1 .navbar ul li {
+  list-style-type: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+nav .container1 .navbar ul li a {
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  transition: all 0.5s ease;
+}
+nav .container1 .navbar ul li a:hover {
+  color: #2845BA;
+}
+nav .container1 .navbar button {
+  width: 150px;
+  height: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  color: white;
+  background-color: #2845BA;
+  border: 1px solid #2845BA;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+nav .container1 .navbar button:hover {
+  background: none;
+  color: #2845BA;
+  cursor: pointer;
+}
+nav .container1 i {
+  font-size: 30px;
+  display: none;
+}
+
+hr {
+  width: 100%;
+}
+
+.section1 {
+  width: 100%;
+  display: flex;
+}
+.section1 .build {
+  width: 52%;
+  padding: 120px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.section1 .build .business {
+  width: 220px;
+  height: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2845BA;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 550;
+}
+.section1 .build h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 48px;
+  color: #051d42;
+}
+.section1 .build p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  color: #051d42;
+}
+.section1 .build .get {
+  display: flex;
+  width: 450px;
+  height: 55px;
+  margin-top: 30px;
+}
+.section1 .build .get input {
+  width: 65%;
+  height: 100%;
+  border: 1px solid #2845BA;
+  font-family: "Open Sans", sans-serif;
+  padding-left: 20px;
+  font-size: 17px;
+}
+.section1 .build .get input:focus {
+  outline: none;
+  border-color: #2845BA;
+}
+.section1 .build .get .free {
+  width: 35%;
+  height: 100%;
+  background-color: #2845BA;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.section1 .photo {
+  width: 48%;
+}
+.section1 .photo img {
+  width: 100%;
+}
+
+.section2 {
+  width: 100%;
+  padding: 100px 0;
+}
+.section2 .olla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section2 .olla .help {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.section2 .olla .help h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 35px;
+  color: #051d42;
+  text-align: center;
+}
+.section2 .olla .help p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 19px;
+  color: dimgrey;
+  text-align: center;
+}
+.section2 .combine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.section2 .combine .design {
+  width: 32%;
+  padding: 70px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.5s ease;
+}
+.section2 .combine .design h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #051d42;
+  font-size: 23px;
+}
+.section2 .combine .design img {
+  width: 30%;
+}
+.section2 .combine .design p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: dimgrey;
+  font-size: 19px;
+  text-align: center;
+}
+@media screen and (max-width: 990px) {
+  nav .navbar ul li {
+    display: none;
+  }
+  nav .navbar button {
+    display: none;
+  }
+  nav .navbar i {
+    display: block;
+  }
+  .section2 .olla .help {
+    width: 100%;
+  }
+  .section2 .combine {
+    flex-wrap: wrap;
+  }
+  .section2 .combine .design {
+    width: 47%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section1 {
+    flex-direction: column;
+  }
+  .section1 .build {
+    width: 100%;
+  }
+  .section1 .photo {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .section1 .build {
+    width: 100%;
+    padding: 20px;
+  }
+  .section2 .combine {
+    flex-direction: column;
+  }
+  .section2 .combine .design {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
