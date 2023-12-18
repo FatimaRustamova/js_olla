@@ -5,7 +5,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1350px;
   width: 100%;
   padding: 0 32px;
   margin: auto;
@@ -15,9 +15,11 @@ nav {
   width: 100%;
   padding: 20px 0;
   background-color: white;
+  position: relative;
+  z-index: 1001;
 }
 nav .container1 {
-  max-width: 1300px;
+  max-width: 1500px;
   width: 100%;
   padding: 0 32px;
   margin: auto;
@@ -41,7 +43,7 @@ nav .container1 .navbar ul li {
 }
 nav .container1 .navbar ul li a {
   text-decoration: none;
-  color: rgb(37, 37, 37);
+  color: #051d42;
   transition: all 0.5s ease;
 }
 nav .container1 .navbar ul li a:hover {
@@ -64,28 +66,87 @@ nav .container1 .navbar button:hover {
   cursor: pointer;
 }
 nav .container1 i {
-  font-size: 30px;
+  font-size: 35px;
   display: none;
+  cursor: pointer;
 }
 
 hr {
   width: 100%;
+  border: 0.5px solid rgba(128, 128, 128, 0.2);
+}
+
+.hurricane {
+  position: fixed;
+  visibility: hidden;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #4B92FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.hurricane i {
+  color: white;
+  font-size: 20px;
+}
+
+.modal {
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+.modal ul {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 25px;
+}
+.modal ul li {
+  list-style-type: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.modal ul li a {
+  text-decoration: none;
+  color: #051d42;
+  transition: all 0.5s ease;
+}
+.modal ul li a:hover {
+  color: #2845BA;
+}
+
+.none {
+  display: none;
 }
 
 .section1 {
   width: 100%;
-  display: flex;
+  position: relative;
 }
-.section1 .build {
-  width: 52%;
-  padding: 120px 100px;
+.section1 .web {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section1 .web .build {
+  width: 47%;
+  margin-top: 170px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.section1 .build .business {
+.section1 .web .build .business {
   width: 220px;
   height: 30px;
+  background-color: rgba(40, 69, 186, 0.1);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #2845BA;
   font-size: 15px;
@@ -94,37 +155,37 @@ hr {
   align-items: center;
   font-weight: 550;
 }
-.section1 .build h1 {
+.section1 .web .build h1 {
   font-family: "Open Sans", sans-serif;
   font-size: 48px;
   color: #051d42;
 }
-.section1 .build p {
+.section1 .web .build p {
   font-family: "Open Sans", sans-serif;
   font-size: 22px;
   color: #051d42;
 }
-.section1 .build .get {
+.section1 .web .build .get {
   display: flex;
-  width: 450px;
-  height: 55px;
   margin-top: 30px;
 }
-.section1 .build .get input {
-  width: 65%;
-  height: 100%;
+.section1 .web .build .get input {
+  width: 55%;
+  height: 60px;
   border: 1px solid #2845BA;
   font-family: "Open Sans", sans-serif;
   padding-left: 20px;
   font-size: 17px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.section1 .build .get input:focus {
+.section1 .web .build .get input:focus {
   outline: none;
   border-color: #2845BA;
 }
-.section1 .build .get .free {
-  width: 35%;
-  height: 100%;
+.section1 .web .build .get .free {
+  width: 27%;
+  height: 60px;
   background-color: #2845BA;
   font-family: "Open Sans", sans-serif;
   font-size: 17px;
@@ -133,9 +194,14 @@ hr {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .section1 .photo {
   width: 48%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .section1 .photo img {
   width: 100%;
@@ -149,9 +215,10 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 .section2 .olla .help {
-  width: 60%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,6 +241,7 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 50px;
 }
 .section2 .combine .design {
@@ -184,7 +252,17 @@ hr {
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  background-color: rgba(255, 192, 203, 0.2);
   transition: all 0.5s ease;
+  position: relative;
+}
+.section2 .combine .design i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
 }
 .section2 .combine .design h3 {
   font-family: "Open Sans", sans-serif;
@@ -200,7 +278,439 @@ hr {
   font-size: 19px;
   text-align: center;
 }
+.section2 .combine .design:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+}
+.section2 .combine .design button {
+  width: 150px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #4B92FF;
+  border: 1px solid #4B92FF;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+.section2 .combine .design button:hover {
+  background-color: #3670c9;
+  cursor: pointer;
+}
+.section2 .load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section2 .load button {
+  width: 150px;
+  height: 45px;
+  border: 1px solid chocolate;
+  background-color: chocolate;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.section2 .load button:hover {
+  background-color: rgb(173, 87, 25);
+}
+
+.details {
+  width: 100%;
+  padding: 50px 0;
+}
+.details #details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details #details .design {
+  width: 32%;
+  padding: 70px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(255, 192, 203, 0.2);
+  transition: all 0.5s ease;
+}
+.details #details .design h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #051d42;
+  font-size: 23px;
+}
+.details #details .design img {
+  width: 30%;
+}
+.details #details .design p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: dimgrey;
+  font-size: 19px;
+  text-align: center;
+}
+.details #details .design:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+.section3 {
+  width: 100%;
+  padding: 50px 0;
+}
+.section3 .all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section3 .all .picture {
+  width: 50%;
+}
+.section3 .all .picture img {
+  width: 100%;
+}
+.section3 .all .feature {
+  width: 40%;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.section3 .all .feature h2 {
+  font-family: "Open Sans", sans-serif;
+  color: #051d42;
+  font-size: 36px;
+}
+.section3 .all .feature h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #051d42;
+  font-size: 19px;
+}
+.section3 .all .feature p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: dimgrey;
+  font-size: 18px;
+}
+
+footer {
+  width: 100%;
+  background-color: #051d42;
+}
+footer .create {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .create .site {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+footer .create .site h2 {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 32px;
+}
+footer .create .site p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 18px;
+}
+footer .create button {
+  width: 140px;
+  height: 60px;
+  border: 1px solid #2845BA;
+  background-color: #2845BA;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+footer .create button:hover {
+  background: none;
+  color: #2845BA;
+  cursor: pointer;
+}
+footer .quick {
+  padding: 70px 0;
+  display: flex;
+  justify-content: space-between;
+}
+footer .quick .img {
+  width: 20%;
+}
+footer .quick .img img {
+  cursor: pointer;
+}
+footer .quick .div {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+footer .quick .div h3 {
+  font-size: 18px;
+}
+footer .quick .div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+footer .quick .div ul li {
+  font-size: 15px;
+  list-style-type: none;
+  transition: all 0.5s ease;
+}
+footer .quick .div ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+footer .quick .news {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+footer .quick .news h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+footer .quick .news p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  color: white;
+}
+footer .quick .news .input {
+  display: flex;
+  width: 100%;
+}
+footer .quick .news .input input {
+  width: 80%;
+  height: 60px;
+  background-color: white;
+  padding-left: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  border: 1px solid white;
+}
+footer .quick .news .input input:focus {
+  outline: none;
+  border-color: white;
+}
+footer .quick .news .input .send {
+  width: 20%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2845BA;
+  cursor: pointer;
+}
+footer .quick .news .input .send i {
+  color: white;
+  font-size: 25px;
+}
+footer .quick .news .icon {
+  display: flex;
+  gap: 30px;
+}
+footer .quick .news .icon i {
+  color: white;
+  font-size: 20px;
+  transition: all 0.5s ease;
+}
+footer .quick .news .icon i:hover {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+footer .copy {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .copy p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: white;
+}
+footer .copy p i {
+  color: #4B92FF;
+}
+footer .copy p a {
+  text-decoration: none;
+  color: #4B92FF;
+}
+
+#form-section {
+  width: 100%;
+  height: 100vh;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form-section form {
+  width: 400px;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #4B92FF;
+}
+#form-section form #img {
+  width: 130px;
+  height: 130px;
+  border: 1px solid #051d42;
+  border-radius: 50%;
+  margin-left: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form-section form #img img {
+  width: 70%;
+}
+#form-section form label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+}
+#form-section form input[type=text] {
+  width: 100%;
+  height: 35px;
+  background-color: white;
+  border: 1px solid white;
+  padding-left: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+#form-section form input[type=text]:focus {
+  outline: none;
+  border-color: white;
+}
+#form-section form input[type=file]::-webkit-file-upload-button {
+  width: 120px;
+  height: 40px;
+  background-color: chocolate;
+  border: 1px solid chocolate;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+#form-section form input[type=file]::file-selector-button {
+  width: 120px;
+  height: 40px;
+  background-color: chocolate;
+  border: 1px solid chocolate;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+#form-section form input[type=submit] {
+  width: 150px;
+  height: 45px;
+  background-color: chocolate;
+  border: 1px solid chocolate;
+  margin-left: 90px;
+  margin-top: 20px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#favor {
+  width: 100%;
+  padding: 70px 0;
+}
+#favor .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#favor .center h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 35px;
+  color: chocolate;
+  text-align: center;
+}
+#favor .center i {
+  font-size: 35px;
+  color: red;
+}
+#favor .favorites {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 70px;
+}
+#favor .favorites .design {
+  width: 32%;
+  padding: 70px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(255, 192, 203, 0.2);
+  transition: all 0.5s ease;
+  position: relative;
+}
+#favor .favorites .design i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
+}
+#favor .favorites .design h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #051d42;
+  font-size: 23px;
+}
+#favor .favorites .design img {
+  width: 30%;
+}
+#favor .favorites .design p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: dimgrey;
+  font-size: 19px;
+  text-align: center;
+}
+#favor .favorites .design:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+}
+#favor .favorites .design button {
+  width: 150px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #4B92FF;
+  border: 1px solid #4B92FF;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+#favor .favorites .design button:hover {
+  background-color: #3670c9;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 990px) {
+  .container {
+    max-width: 800px;
+  }
   nav .navbar ul li {
     display: none;
   }
@@ -215,31 +725,112 @@ hr {
   }
   .section2 .combine {
     flex-wrap: wrap;
+    gap: 30px;
   }
   .section2 .combine .design {
     width: 47%;
   }
+  .section3 .all {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .section3 .all .picture {
+    width: 100%;
+  }
+  .section3 .all .feature {
+    width: 100%;
+  }
+  footer .quick {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  footer .quick .img {
+    width: 25%;
+  }
+  footer .quick .div {
+    width: 30%;
+  }
+  footer .quick .news {
+    width: 50%;
+  }
 }
 @media screen and (max-width: 768px) {
-  .section1 {
+  .container {
+    max-width: 600px;
+  }
+  .section1 .web {
     flex-direction: column;
   }
-  .section1 .build {
+  .section1 .web .build {
     width: 100%;
+    margin-top: 30px;
   }
   .section1 .photo {
     display: none;
   }
+  .section2 .olla {
+    margin-top: 40px;
+  }
+  .section3 .all .feature {
+    padding: 0;
+  }
+  footer .create {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  footer .quick {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  footer .quick .img {
+    width: 100%;
+  }
+  footer .quick .div {
+    width: 40%;
+  }
+  footer .quick .news {
+    width: 50%;
+  }
 }
 @media screen and (max-width: 576px) {
-  .section1 .build {
+  .container {
+    max-width: 1350px;
+  }
+  .section1 .web .build {
     width: 100%;
     padding: 20px;
   }
+  .section1 .web .build .get {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .section1 .web .build .get input {
+    width: 100%;
+    border-radius: 5px;
+  }
+  .section1 .web .build .get .free {
+    width: 40%;
+    border-radius: 5px;
+  }
   .section2 .combine {
     flex-direction: column;
+    gap: 30px;
   }
   .section2 .combine .design {
+    width: 100%;
+  }
+  footer .quick {
+    flex-direction: column;
+  }
+  footer .quick .img {
+    width: 100%;
+  }
+  footer .quick .div {
+    width: 100%;
+  }
+  footer .quick .news {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
