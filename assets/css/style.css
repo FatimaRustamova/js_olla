@@ -5,7 +5,7 @@
 }
 
 .container {
-  max-width: 1350px;
+  max-width: 1250px;
   width: 100%;
   padding: 0 32px;
   margin: auto;
@@ -19,7 +19,7 @@ nav {
   z-index: 1001;
 }
 nav .container1 {
-  max-width: 1500px;
+  max-width: 1450px;
   width: 100%;
   padding: 0 32px;
   margin: auto;
@@ -236,6 +236,24 @@ hr {
   font-size: 19px;
   color: dimgrey;
   text-align: center;
+}
+.section2 .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.section2 .search input[type=search] {
+  width: 300px;
+  height: 45px;
+  border: 1px solid chocolate;
+  padding-left: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+.section2 .search input[type=search]:focus {
+  outline: none;
+  border: 1px solid chocolate;
 }
 .section2 .combine {
   display: flex;
@@ -594,16 +612,6 @@ footer .copy p a {
 #form-section form input[type=text]:focus {
   outline: none;
   border-color: white;
-}
-#form-section form input[type=file]::-webkit-file-upload-button {
-  width: 120px;
-  height: 40px;
-  background-color: chocolate;
-  border: 1px solid chocolate;
-  color: white;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
 }
 #form-section form input[type=file]::file-selector-button {
   width: 120px;

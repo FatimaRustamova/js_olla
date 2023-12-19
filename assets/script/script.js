@@ -1,13 +1,17 @@
 //---Data---//
 let combine = document.querySelector(".combine");
+let search = document.querySelector("input[type=search]");
 let length = 3;
+let filteredArr = [];
 
 function getAllElement() {
     fetch("http://localhost:3000/olla")
-    .then(res => res.json())
-    .then(data => {
-        data.slice(0, length).forEach(element => {
-            combine.innerHTML += `
+        .then(res => res.json())
+        .then(data => {
+            combine.innerHTML = "";
+            filteredArr = search.value ? filteredArr : data;
+            filteredArr.slice(0, length).forEach(element => {
+                combine.innerHTML += `
             <div class="design">
                 <i class="bi bi-heart" onclick="favoriteEl(${element.id})"></i>
                 <h3>${element.name}</h3>
@@ -18,18 +22,27 @@ function getAllElement() {
                 <button onclick="updateObject(${element.id})">Update</button>
             </div>
             `
-        });
-    })
+            });
+        })
 }
 
 getAllElement();
+
+
+//---Search---//
+search.addEventListener("input", function (e) {
+    filteredArr = filteredArr.filter((el) =>
+        el.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())
+    );
+    getAllElement();
+});
 
 
 //---View Details---//
 function viewDetails(id) {
     window.location = `./details.html?id=${id}`
 }
-
+ 
 
 //---Delete---//
 function deleteObject(id) {
@@ -44,26 +57,26 @@ function updateObject(id) {
 }
 
 
-//---Load More---//
-let load = document.querySelector("#load");
-
-
 //---Favorite---//
 function favoriteEl(id) {
     axios.get(`http://localhost:3000/olla/${id}`)
-    .then(res => {
-        axios.post("http://localhost:3000/favorites", res.data)
-    })
+        .then(res => {
+            axios.post("http://localhost:3000/favorites", res.data)
+        })
 }
 
-load.addEventListener("click", ()=>{
-    if(load.innerText == "Load More"){
+
+//---Load More---//
+let load = document.querySelector("#load");
+
+load.addEventListener("click", () => {
+    if (load.innerText == "Load More") {
         length += 3;
         combine.innerHTML = "";
         getAllElement();
         load.innerText = "Less More";
     }
-    else{
+    else {
         length -= 3;
         combine.innerHTML = "";
         getAllElement();
@@ -75,14 +88,14 @@ load.addEventListener("click", ()=>{
 //---Nav---//
 let nav = document.querySelector("nav");
 
-window.addEventListener("scroll", ()=> {
-    if(window.scrollY>120){
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 120) {
         nav.style.position = "fixed";
         nav.style.top = "0";
         nav.style.left = "0";
         nav.style.transition = "all .5s ease";
     }
-    else{
+    else {
         nav.style.position = "";
         nav.style.transition = "all .5s ease";
     }
@@ -92,16 +105,16 @@ window.addEventListener("scroll", ()=> {
 //---Hurricane---//
 let hurricane = document.querySelector(".hurricane");
 
-window.addEventListener("scroll", ()=>{
-    if(window.scrollY>600){
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 600) {
         hurricane.style.visibility = "visible"
     }
-    else{
+    else {
         hurricane.style.visibility = ""
     }
 })
 
-hurricane.addEventListener("click", ()=>{
+hurricane.addEventListener("click", () => {
     window.scrollTo({
         top: 0,
         left: 0,
@@ -114,6 +127,6 @@ hurricane.addEventListener("click", ()=>{
 let i = document.querySelector("#i");
 let modal = document.querySelector(".modal");
 
-i.addEventListener("click", ()=>{
+i.addEventListener("click", () => {
     modal.classList.toggle("none")
 })
